@@ -35,7 +35,7 @@
 </head>
 
 <body data-theme="light">
-    <nav class="border-8" id="nav" style="background-color: white; border-bottom: 2px solid lightgray;">
+    <nav class="nav" id="nav" style="background-color: white; border-bottom: 2px solid lightgray;">
 
         <header id="top">
             <div class="container-1">
