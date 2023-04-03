@@ -1,6 +1,6 @@
 <x-layout>
     <div id="weather-container">
-        <div class="card">
+        <div class="card" style="background: black;opacity: 0.9;">
             <div class="weather-search">
                 <input type="text" class="weather-search-bar" placeholder="search">
                 <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"

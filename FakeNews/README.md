@@ -1,66 +1,37 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a tutorial to make the laravel project work after cloning it.
 
-## About Laravel
+you only need to do this once and for the next changes you can just do "git pull".
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    1. clone it with git clone <url>
+    2. go in the laravel project and copy paste the .env.example and rename the pasted one to just ".env".
+    3. open the .env and you see "DB_DATABASE=" put "fakenews", and make an empty database called fakenews.
+    4. open terminal inside the laravel project.
+    5. type "composer install". If it doesn't work, download composer from the internet.
+    6. type "npm install".
+    7. type "npm run build".
+    8. type php "artisan key:generate".
+    9. type "php artisan migrate".
+    10. lastly type "php artisan storage:link".
+    11. If storage:link command doesn't work, delete the storage folder found in the public folder (/public/storage/)
+    11. run php artisan serve.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+note: After making a new user, if you change is_admin to 1, you get access to upload posts.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+If you get "Path cannot be empty" error then follow the steps below:
 
-## Learning Laravel
+    1. Open file explorer.
+    2. go to C:\Windows\
+    3. there you will see explorer.exe, right click and select "run as admin".
+    4. The new opened file explorer is now running with admin priveledges, use that one.
+    5. Right-click on the "C:\Windows\temp" directory and select "Properties".
+    6. Click on the "Security" tab.
+    7. Click on the "Edit" button to modify permissions.
+    8. Click on the "Add" button and enter "NETWORK SERVICE" as the object name.
+    9. Click on the "Check Names" button to verify that the object name is correct.
+    10. Click on the "OK" button to add the "NETWORK SERVICE" account to the list of users and groups.
+    11. Select the "NETWORK SERVICE" account from the list of users and groups.
+    12. Under "Permissions for NETWORK SERVICE", check the "Full control" checkbox under "Allow".
+    13. Click on the "Apply" button to save the changes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Note that granting full control to the "NETWORK SERVICE" account may not be the most secure option, and you may want to consider limiting the permissions to read, write, and modify as appropriate for your specific use case.
