@@ -9,8 +9,13 @@ class PostController extends Controller
 {
     public function all()
     {
+        // return view('posts.index', [
+        //     'posts' => Post::take(8)->get()
+        // ]);
+
         return view('posts.index', [
-            'posts' => Post::take(8)->get()
+            'posts' => Post::latest()->filter(request(['search', 'category', 'author']))->paginate(8)->withQueryString()
         ]);
+
     }
 }
