@@ -41,6 +41,11 @@ function darkTheme(icon, logo, text, container, inputField) {
   document.body.classList.add("dark-mode");
   document.body.style.backgroundColor = "#0a0b11";
   document.getElementById('nav').style.backgroundColor = "#0a0b11";
+  backColor2 = document.getElementsByClassName('back-color2');
+
+  for (var i = 0; i < backColor2.length; i++) {
+    backColor2[i].style.backgroundColor = "black";
+  }
 
   for (var i = 0; i < text.length; i++) {
     text[i].style.color = "white";
@@ -63,6 +68,11 @@ function lightTheme(icon, logo, text, container, inputField) {
   document.body.classList.remove("dark-mode");
   document.body.style.backgroundColor = "white";
   document.getElementById('nav').style.backgroundColor = "white";
+  backColor2 = document.getElementsByClassName('back-color2');
+
+  for (var i = 0; i < backColor2.length; i++) {
+    backColor2[i].style.backgroundColor = "white";
+  }
 
   for (var i = 0; i < text.length; i++) {
     text[i].style.color = "black";
