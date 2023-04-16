@@ -28,7 +28,7 @@
                                 <a href="#link2">
                                     <h2 class="name">{{ strlen($post->title) > 100 ? substr($post->title, 0, 100) . "..." : $post->title }}</h2>
                                 </a>
-                                <span class="role">Bron: {{ $post->user->name }}</span>
+                                <span class="role">Bron: {{ isset($post->user->name) ? $post->user->name : 'Deleted Acc' }}</span>
                             </figcaption>
                         </figure>
                     @endif
