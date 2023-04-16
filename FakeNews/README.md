@@ -1,22 +1,15 @@
+After you clone it, run these commands 
 
-This is a tutorial to make the laravel project work after cloning it.
+    1. copy .env.exmaple and rename the copied one .env.
+    2. type "composer install".
+    3. type "npm install".
+    4. type "npm run build".
+    5. type php "artisan key:generate".
+    6. type "php artisan migrate".
+    7. lastly type "php artisan storage:link".
+    8. run php artisan serve.
 
-you only need to do this once and for the next changes you can just do "git pull".
-
-    1. clone it with git clone <url>
-    2. go in the laravel project and copy paste the .env.example and rename the pasted one to just ".env".
-    3. open the .env and you see "DB_DATABASE=" put "fakenews", and make an empty database called fakenews.
-    4. open terminal inside the laravel project.
-    5. type "composer install". If it doesn't work, download composer from the internet.
-    6. type "npm install".
-    7. type "npm run build".
-    8. type php "artisan key:generate".
-    9. type "php artisan migrate".
-    10. lastly type "php artisan storage:link".
-    11. If storage:link command doesn't work, delete the storage folder found in the public folder (/public/storage/)
-    11. run php artisan serve.
-
-note: After making a new user, if you change is_admin to 1, you get access to upload posts.
+After making a new user, if you change is_admin to 1, you get access to upload posts.
 
 If you get "Path cannot be empty" error then follow the steps below:
 
