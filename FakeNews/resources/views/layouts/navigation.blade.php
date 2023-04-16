@@ -33,7 +33,7 @@
                         </button>
                     </x-slot>
 
-                    <x-slot name="content">
+                    <x-slot name="content" class="back-color2">
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
