@@ -21,6 +21,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
@@ -32,9 +34,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body data-theme="light">
+
     <nav class="nav" id="nav" style="background-color: white; border-bottom: 2px solid lightgray;">
 
         <header id="top">
@@ -105,10 +110,49 @@
                                 </a>
                             </li>
                             <li id="login-btn">
-                                <a href="inloggen">
-                                    <span class="screenreadertext">Inloggen</span>
-                                    <i class="fa-solid fa-user icon"></i>
-                                </a>
+
+@guest
+            <a href="inloggen">
+                <span class="screenreadertext">Inloggen</span>
+                <i class="fa-solid fa-user icon"></i>
+            </a>
+@else
+                <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <x-dropdown align="right" width="48">
+                    <x-slot name="trigger">
+                        <button class="inline-flex items-center px-3 py-2 text-sm leading-4 font-medium rounded-md hover:text-gray-700 dark:hover:text-white-300 focus:outline-none transition ease-in-out duration-150">
+                            <div class="textColor">{{ Auth::user()->name }}</div>
+
+                            <div class="ml-1">
+                                <svg class="fill-current textColor h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                    </x-slot>
+
+                    <x-slot name="content" class="back-color2">
+                        <x-dropdown-link :href="route('profile.edit')">
+                            {{ __('Profile') }}
+                        </x-dropdown-link>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
+                    </x-slot>
+                </x-dropdown>
+            </div>
+@endauth
+
+
+
                             </li>
                             <li id="search-btn">
                                 <a href="#zoeken">
