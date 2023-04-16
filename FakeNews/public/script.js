@@ -90,7 +90,7 @@ function setCookie(name, value) {
 
 $(document).ready(function () {
   $("#search-btn").click(function (event) {
-    event.preventDefault(); // prevent the link from being followed
+    event.preventDefault();
     $(".main-menu-3").toggleClass("open");
     $(".search-bar").toggle();
   });
@@ -98,17 +98,16 @@ $(document).ready(function () {
 
 
 
-const searchBtn = document.getElementById("search-btn");
-const searchInput = document.querySelector(".search-bar input");
 
-searchBtn.addEventListener("click", function () {
-  const searchbar = document.querySelector(".search-bar");
-  if (searchbar.classList.contains("active")) {
-    searchbar.classList.remove("active");
-  } else {
-    searchbar.classList.add("active");
-    searchInput.focus();
-  }
+const searchSubmit = document.getElementById("search-submit");
+
+searchSubmit.addEventListener("click", function () {
+
+
+  const searchInput = document.querySelector(".search-bar input");
+
+  window.location.replace('/home?=');
+
 });
 
 

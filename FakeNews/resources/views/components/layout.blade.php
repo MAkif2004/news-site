@@ -124,10 +124,19 @@
                 <div class="row row-2">
                     <div class="col">
                         <div class="search-bar">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button class="button-28" type="submit" role="button">SEARCH</button>
+                            <form method="GET" action="/home">
+                                <input type="text" name="search" value="{{ request('search') }}" placeholder="Search...">
+                                <button class="button-28" id="search-submit" type="submit" role="button">SEARCH</button>
                             </form>
+
+
+                                {{-- @if (request('category'))
+                                    <input type="hidden" name="category" value="{{ request('category') }}" />
+                                @endif
+
+                                <input
+                                value="{{ request('search') }}"
+                                class="bg-transparent placeholder-black font-semibold text-sm"> --}}
 
                         </div>
                     </div>
