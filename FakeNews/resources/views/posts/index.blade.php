@@ -12,6 +12,12 @@
                 </span>
             </h2>
             <div class="gallery-wrapper bg-white" data-aos="fade-down">
+
+                @if (count($posts) < 1)
+                    <p>Geen resultaten gevonden :/ </p>
+
+                @else
+
                 @foreach ($posts as $post)
                     @if ($loop->iteration <= 5)
                         <figure class="gallery-item">
@@ -27,6 +33,10 @@
                         </figure>
                     @endif
                 @endforeach
+
+                @endif
+
+
 
                 {{-- Nieuwe studie toont aan dat regelmatige powernaps de productiviteit kunnen verhogen --}}
                 {{-- <img src="/images/sleepingfemale.jpg" alt="" class="item-image" /> --}}
@@ -80,7 +90,7 @@
         </section>
         <section class="container-3-border" data-aos="fade-down" data-aos-duration="700">
             <div class="container-3">
-                <h1>Meer Nieuws</h1>
+                <h1>Iets Gemist?</h1>
 
             </div>
             <div class="nieuws-2">
@@ -99,5 +109,17 @@
             </div>
         </section>
     </div>
+
+    @if (session()->has('success'))
+    <div x-data="{ show: true }"
+    x-init="setTimeout(() => show = false, 3000)"
+    x-show="show"
+        class="fixed bg-blue-500 text-white py-2 px-4 rounded-xl bottom-3 right-3 text-sm">
+            <p>
+                {{ session('success') }}
+            </p>
+        </div>
+    @endif
+
     <!--Hero end-->
 </x-layout>
