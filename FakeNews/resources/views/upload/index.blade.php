@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12" style="padding:20px;">
                 <div class="upload-card">
-                    <div class="card-header">Laravel 9 Image Upload and Display in Datatable | File Storage</div>
+                    <div class="card-header">Your articles</div>
                     <div class="card-body">
                         <a href="{{ url('/upload/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
