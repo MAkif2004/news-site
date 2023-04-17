@@ -4,13 +4,14 @@ news site template using laravel. Made together with Aaronmensah33, joelkkusi an
 Take these steps to make it work.
 
     1. copy paste the .env.example and remate it ".env".
-    2. type "composer install".
-    3. type "npm install".
-    4. type "npm run build".
-    5. type php "artisan key:generate".
-    6. type "php artisan migrate".
-    7. lastly type "php artisan storage:link". If storage:link command doesn't work, delete the storage folder found in the public folder.
-    8. type php artisan serve.
+    2. open the .env file and put your database name, username and password.
+    3. type "composer install".
+    4. type "npm install".
+    5. type "npm run build".
+    6. type php "artisan key:generate".
+    7. type "php artisan migrate".
+    8. lastly type "php artisan storage:link". If storage:link command doesn't work, delete the storage folder found in the public folder.
+    9. type php artisan serve.
 
 After making a new user, if you change is_admin to 1, you get access to upload posts.
 
