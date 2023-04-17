@@ -98,7 +98,7 @@
             <div class="nieuws-2">
                 <ul>
                     @foreach ($posts as $post)
-                    @if ($loop->iteration >= 6)
+                    @if ($loop->iteration >= 6 && $loop->iteration <= 8)
                     <li>
                         <p class="textColor">{{ strlen($post->title) > 80 ? substr($post->title, 0, 80) . "..." : $post->title }}</p>
                     </li>
@@ -112,25 +112,38 @@
         </section>
     </div>
 
-    <div class="onder-img">
-    @foreach ($posts as $post)
-    @if ($loop->iteration >= 6)
-    <div class="img-hover-zoom">
-        <img src="{{ asset($post->image->photo) }}" alt="This zooms-in really well and smooth" height="205" width="500">
-        <a href="#Corona">
-          <span>{{ $post->shorttitle }}</span>
-        </a>
-        <p>{{ $post->title }}</p>
-        <a href="#Corona">
-          <span id="box-1">
-            <p>Meer</p>
-          </span>
-          <i class="fa-solid fa-arrow-down"></i>
-        </a>
-      </div>
-    @endif
-    @endforeach
-    </div>
+    @for ($i = 5; $i < count($posts); $i+=3)
+
+        <div class="onder-img" style="width: 100%;">
+            @for ($j = $i; $j < $i + 3; $j++)
+
+                @if (isset($posts[$j]))
+
+                    <div class="img-hover-zoom">
+                        <img style="cursor: pointer;" src="{{ asset($posts[$j]->image->photo) }}" alt="This zooms-in really well and smooth" height="205" width="500">
+                        {{-- <span id="boxx">
+                            <p style="position: absolute;bottom: -9px;">Meer</p>
+                        </span> --}}
+                        <a href="#Corona">
+                            <span>test title lol</span>
+                        </a>
+                        <p class="textColor">{{ strlen($post->title) > 60 ? substr($post->title, 0, 60) . "..." : $post->title }}</p>
+                        <a href="#Corona">
+                        {{-- <span id="box-1">
+                            <p style="position: absolute;bottom: -9px;">Meer</p>
+                        </span> --}}
+                        <i class="fa-solid arrow fa-arrow-down" style="position: relative;top: -29px;left: 79px;"></i>
+                        </a>
+                    </div>
+
+                @endif
+
+            @endfor
+
+        </div>
+
+    @endfor
+
 
     {{-- <div class="onder-img">
         <div class="img-hover-zoom">
@@ -193,6 +206,9 @@
           </a>
         </div>
     </div> --}}
+
+    {{ $posts->links() }}
+
 
     @if (session()->has('success'))
     <div x-data="{ show: true }"
