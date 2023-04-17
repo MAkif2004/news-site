@@ -38,6 +38,8 @@
 
 
 
+
+
                 {{-- Nieuwe studie toont aan dat regelmatige powernaps de productiviteit kunnen verhogen --}}
                 {{-- <img src="/images/sleepingfemale.jpg" alt="" class="item-image" /> --}}
                 {{-- <figure class="gallery-item">
@@ -109,6 +111,88 @@
             </div>
         </section>
     </div>
+
+    <div class="onder-img">
+    @foreach ($posts as $post)
+    @if ($loop->iteration >= 6)
+    <div class="img-hover-zoom">
+        <img src="{{ asset($post->image->photo) }}" alt="This zooms-in really well and smooth" height="205" width="500">
+        <a href="#Corona">
+          <span>{{ $post->shorttitle }}</span>
+        </a>
+        <p>{{ $post->title }}</p>
+        <a href="#Corona">
+          <span id="box-1">
+            <p>Meer</p>
+          </span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </div>
+    @endif
+    @endforeach
+    </div>
+
+    {{-- <div class="onder-img">
+        <div class="img-hover-zoom">
+          <img src="..//images/covid.jpg" alt="This zooms-in really well and smooth" height="205" width="500">
+          <a href="#Corona">
+            <span>Corona</span>
+          </a>
+          <p>Nieuwe maatregelen tegen verspreiding van coronavirus in Nederland</p>
+          <a href="#Corona">
+            <span id="box-1">
+              <p>Meer</p>
+            </span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div> --}}
+
+
+
+
+    {{-- <div class="onder-img">
+        <div class="img-hover-zoom">
+          <img src="..//images/covid.jpg" alt="This zooms-in really well and smooth" height="205" width="500">
+          <a href="#Corona">
+            <span>Corona</span>
+          </a>
+          <p>Nieuwe maatregelen tegen verspreiding van coronavirus in Nederland</p>
+          <a href="#Corona">
+            <span id="box-1">
+              <p>Meer</p>
+            </span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+        </div>
+
+        <div class="img-hover-zoom">
+          <img src="..//images/fehnerbache.jpg" alt="This zooms-in really well and smooth" height="205" width="500">
+          <a href="#Euroleague">
+            <span>Euroleague</span>
+          </a>
+          <p>Fenerbahce wint van Panathinaikos in intense Euroleague wedstrijd</p>
+          <a href="#Euroleague">
+            <span id="box-1">
+              <p>Meer</p>
+            </span>
+            <i class="fa-solid fa-arrow-down" id="arrow-2"></i>
+          </a>
+        </div>
+
+        <div class="img-hover-zoom">
+          <img src="..//images/blikje.jpg" alt="This zooms-in really well and smooth" height="205" width="500">
+          <a href="#Zaterdag">
+            <span>Vanaf zaterdag</span>
+          </a>
+          <p>Blikje meenemen voor statiegeld: gaan we dat echt doen?</p>
+          <a href="#Zaterdag">
+            <span id="box-1">
+              <p>Meer</p>
+            </span>
+            <i class="fa-solid fa-arrow-down" id="arrow-3"></i>
+          </a>
+        </div>
+    </div> --}}
 
     @if (session()->has('success'))
     <div x-data="{ show: true }"
