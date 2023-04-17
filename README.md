@@ -13,8 +13,6 @@ Take these steps to make it work.
     8. lastly type "php artisan storage:link". If storage:link command doesn't work, delete the storage folder found in the public folder.
     9. type php artisan serve.
 
-After making a new user, if you change is_admin to 1, you get access to upload posts.
-
 If you get "Path cannot be empty" error on Windows, then follow the steps below:
 
     1. Open File Explorer with administrator rights.
